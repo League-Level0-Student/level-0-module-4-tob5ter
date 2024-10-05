@@ -38,9 +38,12 @@ import processing.core.PImage;
  *      playWhoohoo() method, otherwise call the playDoh() method.
  */
 public class WheresWaldo extends PApplet {
-    static final int WIDTH = 600;
-    static final int HEIGHT = 400;
-
+    static final int WIDTH = 1800;
+    static final int HEIGHT = 975;
+    int waldoBLX = 297;
+    int waldoBLY = 830;
+    int waldoTRX = 306;
+    int waldoTRY = 821;
     PImage waldo;
 
     @Override
@@ -50,12 +53,17 @@ public class WheresWaldo extends PApplet {
 
     @Override
     public void setup() {
-        
+    	waldo = loadImage("waldo.jpg");
+    	waldo.resize(WIDTH, HEIGHT);
     }
 
     @Override
     public void draw() {
-        
+        background(waldo);
+        if(mousePressed) {
+        	System.out.println(mouseX+" "+mouseY);
+        	
+        }
     }
 
     static public void main(String[] args) {

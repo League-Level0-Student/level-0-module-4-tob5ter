@@ -12,9 +12,10 @@ import processing.core.PImage;
  * 
  * 2. Declare a variable for the image:
  *    PImage face;
- * 
+ * 	
  * 3. In your setup() method, import your image using the following code:
  *    face = loadImage("face.jpg");
+ *    
  * 
  * 4. Resize your face image to the size of the window using the resize() method.
  * 
@@ -41,20 +42,48 @@ public class GooglyEyes extends PApplet {
     static final int HEIGHT = 600;
     
     PImage face;
+    int leftEyeX=273;
+    int leftEyeY=284;
     
     @Override
     public void settings() {
         size(WIDTH, HEIGHT);
+        
     }
     
     @Override
     public void setup() {
-
+    face = loadImage("src/_02_boolean/_5_googly_eyes/01WAQbigeyes.png");
+    face.resize(WIDTH, HEIGHT);
+    
     }
 
     @Override
     public void draw() {
-
+    if(mousePressed) {
+    	System.out.print(mouseX +" "+mouseY);
+    }
+    if(mouseX>317) {
+    	mouseX = 273;
+    }
+    if(mouseX<217) {
+    	mouseX = 273;
+    }
+    if(mouseY>328) {
+    	mouseY = 284;
+    }
+    if(mouseY<240) {
+    	mouseY = 284;
+    }
+    background(face);
+    fill(255,255,255);
+    ellipse(leftEyeX,leftEyeY,110,110);
+    fill(0,0,0);
+    ellipse(mouseX,mouseY,20,20);
+    fill(255,255,255);
+    ellipse(leftEyeX+180,leftEyeY,110,110);
+    fill(0,0,0);
+    ellipse(mouseX+180,mouseY,20,20);
     }
 
     static public void main(String[] args) {
