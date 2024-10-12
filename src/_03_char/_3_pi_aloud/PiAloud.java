@@ -2,6 +2,8 @@ package _03_char._3_pi_aloud;
 
 import java.util.Scanner;
 
+import game_tools.Sound;
+
 public class PiAloud {
     /***********  SOUND ***************
      * Some computers are unable to play sounds.
@@ -9,7 +11,9 @@ public class PiAloud {
      * If you are not sure, ask your teacher
      * *****************/
     boolean canPlaySounds = true;
-
+   
+    	public static void main(String[] args) {
+    		String pie = "3.1415926535897932384616";
 
     // 1. Make a main method and make sure your program can run
 
@@ -17,8 +21,14 @@ public class PiAloud {
 
     // 3. Print out 3 digits of Pi. The first value is "pi.charAt(0)", the second is "pi.charAt(1)"
     // Check the console shows 3.1
+    		System.out.println(pie.charAt(0));
+    		System.out.println(pie.charAt(1));
 
     // 4. Print ALL the digits of the Pi String, putting each digit on a new line  (hint: use a loop)
+    		for(int i=0;i<20;i++) {
+    			System.out.println(pie.charAt(i));
+    			
+    		}
 
     // 5. Skip this step if your computer cannot play sounds.
     //if (canPlaySounds) {
@@ -34,6 +44,7 @@ public class PiAloud {
 
 
     /********************  Use these methods. DON'T CHANGE THE CODE BELOW  ******************/
+    	}
 
     private static void pause(int seconds) {
         try {
